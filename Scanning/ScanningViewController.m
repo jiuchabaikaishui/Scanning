@@ -9,6 +9,7 @@
 #import "ScanningViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 #import "ShadowView.h"
 
 @interface ScanningViewController ()<AVCaptureMetadataOutputObjectsDelegate>
@@ -28,8 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
-    if (authStatus == ALAuthorizationStatusRestricted || authStatus == ALAuthorizationStatusDenied)
+//    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+    PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
+    if (authStatus == PHAuthorizationStatusRestricted || authStatus == PHAuthorizationStatusDenied)
     {
         NSLog(@"请授权掌医医护端使用相机服务: 设置 > 隐私 > 相机");
         return;

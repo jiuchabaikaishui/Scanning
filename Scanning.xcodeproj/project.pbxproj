@@ -217,7 +217,7 @@
 				TargetAttributes = {
 					6E7AAADF1E8E9C6500EE23AA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XG7F759PG6;
+						DevelopmentTeam = CBB7T9SG3B;
 						ProvisioningStyle = Automatic;
 					};
 					6E7AAAF81E8E9C6500EE23AA = {
@@ -435,9 +435,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XG7F759PG6;
+				DEVELOPMENT_TEAM = CBB7T9SG3B;
 				INFOPLIST_FILE = Scanning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etongxing.www.Scanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,9 +448,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XG7F759PG6;
+				DEVELOPMENT_TEAM = CBB7T9SG3B;
 				INFOPLIST_FILE = Scanning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etongxing.www.Scanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
