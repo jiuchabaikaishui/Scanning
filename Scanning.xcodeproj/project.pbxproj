@@ -7,16 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F53FD516E70D4C810C19678 /* libPods-ScanningTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C92E8F70993016BAE69E6662 /* libPods-ScanningTests.a */; };
+		5C401414219D1880003976B9 /* UITableView+QSPMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4013FC219D187F003976B9 /* UITableView+QSPMVVM.m */; };
+		5C401415219D1880003976B9 /* QSPTableViewSectionM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401400219D187F003976B9 /* QSPTableViewSectionM.m */; };
+		5C401416219D1880003976B9 /* QSPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401402219D187F003976B9 /* QSPTableViewCell.m */; };
+		5C401417219D1880003976B9 /* QSPTableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401404219D187F003976B9 /* QSPTableViewFooterView.m */; };
+		5C401418219D1880003976B9 /* QSPTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401406219D187F003976B9 /* QSPTableViewHeaderView.m */; };
+		5C401419219D1880003976B9 /* QSPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401408219D187F003976B9 /* QSPView.m */; };
+		5C40141A219D1880003976B9 /* QSPScrollViewVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40140B219D187F003976B9 /* QSPScrollViewVM.m */; };
+		5C40141B219D1880003976B9 /* QSPTableViewCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40140D219D187F003976B9 /* QSPTableViewCellVM.m */; };
+		5C40141C219D1880003976B9 /* QSPTableViewSectionVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40140F219D187F003976B9 /* QSPTableViewSectionVM.m */; };
+		5C40141D219D1880003976B9 /* QSPTableViewVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401411219D187F003976B9 /* QSPTableViewVM.m */; };
+		5C40141E219D1880003976B9 /* QSPViewVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401413219D187F003976B9 /* QSPViewVM.m */; };
+		5C401439219D188B003976B9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401422219D188B003976B9 /* BaseViewController.m */; };
+		5C40143A219D188B003976B9 /* BaseM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401425219D188B003976B9 /* BaseM.m */; };
+		5C40143B219D188B003976B9 /* CommonM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401427219D188B003976B9 /* CommonM.m */; };
+		5C40143C219D188B003976B9 /* ConFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40142B219D188B003976B9 /* ConFunc.m */; };
+		5C40143D219D188B003976B9 /* CommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40142F219D188B003976B9 /* CommonTableViewCell.m */; };
+		5C40143E219D188B003976B9 /* CommonTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401431219D188B003976B9 /* CommonTableViewHeaderView.m */; };
+		5C40143F219D188B003976B9 /* BaseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401434219D188B003976B9 /* BaseVM.m */; };
+		5C401440219D188B003976B9 /* CommonTableViewCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401436219D188B003976B9 /* CommonTableViewCellVM.m */; };
+		5C401441219D188B003976B9 /* CommonTableViewSectionVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401438219D188B003976B9 /* CommonTableViewSectionVM.m */; };
+		5C401450219D4F1A003976B9 /* ScanningVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40144F219D4F1A003976B9 /* ScanningVM.m */; };
 		6E30C07C1EB1CDEE0000F65E /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E30C07B1EB1CDEE0000F65E /* ShadowView.m */; };
 		6E7AAAE51E8E9C6500EE23AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAE41E8E9C6500EE23AA /* main.m */; };
 		6E7AAAE81E8E9C6500EE23AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAE71E8E9C6500EE23AA /* AppDelegate.m */; };
-		6E7AAAEB1E8E9C6500EE23AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAEA1E8E9C6500EE23AA /* ViewController.m */; };
+		6E7AAAEB1E8E9C6500EE23AA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAEA1E8E9C6500EE23AA /* MainViewController.m */; };
 		6E7AAAEE1E8E9C6500EE23AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAAEC1E8E9C6500EE23AA /* Main.storyboard */; };
 		6E7AAAF01E8E9C6500EE23AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAAEF1E8E9C6500EE23AA /* Assets.xcassets */; };
 		6E7AAAF31E8E9C6500EE23AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7AAAF11E8E9C6500EE23AA /* LaunchScreen.storyboard */; };
 		6E7AAAFE1E8E9C6500EE23AA /* ScanningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAFD1E8E9C6500EE23AA /* ScanningTests.m */; };
 		6E7AAB091E8E9C6500EE23AA /* ScanningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAB081E8E9C6500EE23AA /* ScanningUITests.m */; };
 		6E7AAB181E8EA3FE00EE23AA /* ScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAB171E8EA3FE00EE23AA /* ScanningViewController.m */; };
+		8AC308DB5C64138440D55EF2 /* libPods-Scanning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5381CC8A979468E53DAEA321 /* libPods-Scanning.a */; };
+		974B3C8808B94E79FD298F57 /* libPods-ScanningUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC9EF6EC80CD55B5AC3D611 /* libPods-ScanningUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +61,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35D9BB02EAB5EC6CC22718A3 /* Pods-Scanning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scanning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scanning/Pods-Scanning.debug.xcconfig"; sourceTree = "<group>"; };
+		3FC9EF6EC80CD55B5AC3D611 /* libPods-ScanningUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanningUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5381CC8A979468E53DAEA321 /* libPods-Scanning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scanning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C738F067669A278F55E777 /* Pods-Scanning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scanning.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scanning/Pods-Scanning.release.xcconfig"; sourceTree = "<group>"; };
+		5C4013FB219D187F003976B9 /* UITableView+QSPMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+QSPMVVM.h"; sourceTree = "<group>"; };
+		5C4013FC219D187F003976B9 /* UITableView+QSPMVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+QSPMVVM.m"; sourceTree = "<group>"; };
+		5C4013FF219D187F003976B9 /* QSPTableViewSectionM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewSectionM.h; sourceTree = "<group>"; };
+		5C401400219D187F003976B9 /* QSPTableViewSectionM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewSectionM.m; sourceTree = "<group>"; };
+		5C401401219D187F003976B9 /* QSPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewCell.h; sourceTree = "<group>"; };
+		5C401402219D187F003976B9 /* QSPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewCell.m; sourceTree = "<group>"; };
+		5C401403219D187F003976B9 /* QSPTableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewFooterView.h; sourceTree = "<group>"; };
+		5C401404219D187F003976B9 /* QSPTableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewFooterView.m; sourceTree = "<group>"; };
+		5C401405219D187F003976B9 /* QSPTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewHeaderView.h; sourceTree = "<group>"; };
+		5C401406219D187F003976B9 /* QSPTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewHeaderView.m; sourceTree = "<group>"; };
+		5C401407219D187F003976B9 /* QSPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPView.h; sourceTree = "<group>"; };
+		5C401408219D187F003976B9 /* QSPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPView.m; sourceTree = "<group>"; };
+		5C40140A219D187F003976B9 /* QSPScrollViewVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPScrollViewVM.h; sourceTree = "<group>"; };
+		5C40140B219D187F003976B9 /* QSPScrollViewVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPScrollViewVM.m; sourceTree = "<group>"; };
+		5C40140C219D187F003976B9 /* QSPTableViewCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewCellVM.h; sourceTree = "<group>"; };
+		5C40140D219D187F003976B9 /* QSPTableViewCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewCellVM.m; sourceTree = "<group>"; };
+		5C40140E219D187F003976B9 /* QSPTableViewSectionVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewSectionVM.h; sourceTree = "<group>"; };
+		5C40140F219D187F003976B9 /* QSPTableViewSectionVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewSectionVM.m; sourceTree = "<group>"; };
+		5C401410219D187F003976B9 /* QSPTableViewVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewVM.h; sourceTree = "<group>"; };
+		5C401411219D187F003976B9 /* QSPTableViewVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPTableViewVM.m; sourceTree = "<group>"; };
+		5C401412219D187F003976B9 /* QSPViewVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPViewVM.h; sourceTree = "<group>"; };
+		5C401413219D187F003976B9 /* QSPViewVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSPViewVM.m; sourceTree = "<group>"; };
+		5C401421219D188B003976B9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5C401422219D188B003976B9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5C401424219D188B003976B9 /* BaseM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseM.h; sourceTree = "<group>"; };
+		5C401425219D188B003976B9 /* BaseM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseM.m; sourceTree = "<group>"; };
+		5C401426219D188B003976B9 /* CommonM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonM.h; sourceTree = "<group>"; };
+		5C401427219D188B003976B9 /* CommonM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonM.m; sourceTree = "<group>"; };
+		5C401429219D188B003976B9 /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		5C40142A219D188B003976B9 /* ConFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConFunc.h; sourceTree = "<group>"; };
+		5C40142B219D188B003976B9 /* ConFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConFunc.m; sourceTree = "<group>"; };
+		5C40142C219D188B003976B9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5C40142E219D188B003976B9 /* CommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewCell.h; sourceTree = "<group>"; };
+		5C40142F219D188B003976B9 /* CommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCell.m; sourceTree = "<group>"; };
+		5C401430219D188B003976B9 /* CommonTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewHeaderView.h; sourceTree = "<group>"; };
+		5C401431219D188B003976B9 /* CommonTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewHeaderView.m; sourceTree = "<group>"; };
+		5C401433219D188B003976B9 /* BaseVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVM.h; sourceTree = "<group>"; };
+		5C401434219D188B003976B9 /* BaseVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVM.m; sourceTree = "<group>"; };
+		5C401435219D188B003976B9 /* CommonTableViewCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewCellVM.h; sourceTree = "<group>"; };
+		5C401436219D188B003976B9 /* CommonTableViewCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCellVM.m; sourceTree = "<group>"; };
+		5C401437219D188B003976B9 /* CommonTableViewSectionVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewSectionVM.h; sourceTree = "<group>"; };
+		5C401438219D188B003976B9 /* CommonTableViewSectionVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewSectionVM.m; sourceTree = "<group>"; };
+		5C40144E219D4F1A003976B9 /* ScanningVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanningVM.h; sourceTree = "<group>"; };
+		5C40144F219D4F1A003976B9 /* ScanningVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanningVM.m; sourceTree = "<group>"; };
 		6E30C07A1EB1CDEE0000F65E /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
 		6E30C07B1EB1CDEE0000F65E /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
 		6E7AAAE01E8E9C6500EE23AA /* Scanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7AAAE41E8E9C6500EE23AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E7AAAE61E8E9C6500EE23AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E7AAAE71E8E9C6500EE23AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E7AAAE91E8E9C6500EE23AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E7AAAEA1E8E9C6500EE23AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6E7AAAE91E8E9C6500EE23AA /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6E7AAAEA1E8E9C6500EE23AA /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6E7AAAED1E8E9C6500EE23AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E7AAAEF1E8E9C6500EE23AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E7AAAF21E8E9C6500EE23AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +129,11 @@
 		6E7AAB0A1E8E9C6500EE23AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E7AAB161E8EA3FE00EE23AA /* ScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanningViewController.h; sourceTree = "<group>"; };
 		6E7AAB171E8EA3FE00EE23AA /* ScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningViewController.m; sourceTree = "<group>"; };
+		C92E8F70993016BAE69E6662 /* libPods-ScanningTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanningTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E88E30D20D572FF5D35F4D21 /* Pods-ScanningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanningTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanningTests/Pods-ScanningTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBC14B70FD153E8E9184AA8D /* Pods-ScanningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanningUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanningUITests/Pods-ScanningUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F590DE474E1747D434B44CE9 /* Pods-ScanningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanningTests/Pods-ScanningTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC4D0FB77916244829DE01B /* Pods-ScanningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanningUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanningUITests/Pods-ScanningUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC308DB5C64138440D55EF2 /* libPods-Scanning.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F53FD516E70D4C810C19678 /* libPods-ScanningTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +157,207 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974B3C8808B94E79FD298F57 /* libPods-ScanningUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4013F8219D187F003976B9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5C4013F9219D187F003976B9 /* QSPMVVM */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5C4013F9219D187F003976B9 /* QSPMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				5C4013FA219D187F003976B9 /* Category */,
+				5C4013FD219D187F003976B9 /* View */,
+				5C401409219D187F003976B9 /* ViewModel */,
+			);
+			path = QSPMVVM;
+			sourceTree = "<group>";
+		};
+		5C4013FA219D187F003976B9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5C4013FB219D187F003976B9 /* UITableView+QSPMVVM.h */,
+				5C4013FC219D187F003976B9 /* UITableView+QSPMVVM.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5C4013FD219D187F003976B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C4013FE219D187F003976B9 /* Model */,
+				5C401401219D187F003976B9 /* QSPTableViewCell.h */,
+				5C401402219D187F003976B9 /* QSPTableViewCell.m */,
+				5C401403219D187F003976B9 /* QSPTableViewFooterView.h */,
+				5C401404219D187F003976B9 /* QSPTableViewFooterView.m */,
+				5C401405219D187F003976B9 /* QSPTableViewHeaderView.h */,
+				5C401406219D187F003976B9 /* QSPTableViewHeaderView.m */,
+				5C401407219D187F003976B9 /* QSPView.h */,
+				5C401408219D187F003976B9 /* QSPView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C4013FE219D187F003976B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C4013FF219D187F003976B9 /* QSPTableViewSectionM.h */,
+				5C401400219D187F003976B9 /* QSPTableViewSectionM.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C401409219D187F003976B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C40140A219D187F003976B9 /* QSPScrollViewVM.h */,
+				5C40140B219D187F003976B9 /* QSPScrollViewVM.m */,
+				5C40140C219D187F003976B9 /* QSPTableViewCellVM.h */,
+				5C40140D219D187F003976B9 /* QSPTableViewCellVM.m */,
+				5C40140E219D187F003976B9 /* QSPTableViewSectionVM.h */,
+				5C40140F219D187F003976B9 /* QSPTableViewSectionVM.m */,
+				5C401410219D187F003976B9 /* QSPTableViewVM.h */,
+				5C401411219D187F003976B9 /* QSPTableViewVM.m */,
+				5C401412219D187F003976B9 /* QSPViewVM.h */,
+				5C401413219D187F003976B9 /* QSPViewVM.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C40141F219D188B003976B9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5C401428219D188B003976B9 /* Source */,
+				5C401423219D188B003976B9 /* Model */,
+				5C40142D219D188B003976B9 /* View */,
+				5C401432219D188B003976B9 /* ViewModel */,
+				5C401420219D188B003976B9 /* Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5C401420219D188B003976B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C401421219D188B003976B9 /* BaseViewController.h */,
+				5C401422219D188B003976B9 /* BaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C401423219D188B003976B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C401424219D188B003976B9 /* BaseM.h */,
+				5C401425219D188B003976B9 /* BaseM.m */,
+				5C401426219D188B003976B9 /* CommonM.h */,
+				5C401427219D188B003976B9 /* CommonM.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C401428219D188B003976B9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5C401429219D188B003976B9 /* CommonDefine.h */,
+				5C40142A219D188B003976B9 /* ConFunc.h */,
+				5C40142B219D188B003976B9 /* ConFunc.m */,
+				5C40142C219D188B003976B9 /* PrefixHeader.pch */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5C40142D219D188B003976B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C40142E219D188B003976B9 /* CommonTableViewCell.h */,
+				5C40142F219D188B003976B9 /* CommonTableViewCell.m */,
+				5C401430219D188B003976B9 /* CommonTableViewHeaderView.h */,
+				5C401431219D188B003976B9 /* CommonTableViewHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C401432219D188B003976B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C401433219D188B003976B9 /* BaseVM.h */,
+				5C401434219D188B003976B9 /* BaseVM.m */,
+				5C401435219D188B003976B9 /* CommonTableViewCellVM.h */,
+				5C401436219D188B003976B9 /* CommonTableViewCellVM.m */,
+				5C401437219D188B003976B9 /* CommonTableViewSectionVM.h */,
+				5C401438219D188B003976B9 /* CommonTableViewSectionVM.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C401442219D47DD003976B9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				5C401443219D47DD003976B9 /* System */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5C401443219D47DD003976B9 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAAE61E8E9C6500EE23AA /* AppDelegate.h */,
+				6E7AAAE71E8E9C6500EE23AA /* AppDelegate.m */,
+				6E7AAAEC1E8E9C6500EE23AA /* Main.storyboard */,
+				6E7AAAEF1E8E9C6500EE23AA /* Assets.xcassets */,
+				6E7AAAF11E8E9C6500EE23AA /* LaunchScreen.storyboard */,
+				6E7AAAF41E8E9C6500EE23AA /* Info.plist */,
+				6E7AAAE31E8E9C6500EE23AA /* Supporting Files */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		5C401444219D47DD003976B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AAAE91E8E9C6500EE23AA /* MainViewController.h */,
+				6E7AAAEA1E8E9C6500EE23AA /* MainViewController.m */,
+				6E7AAB161E8EA3FE00EE23AA /* ScanningViewController.h */,
+				6E7AAB171E8EA3FE00EE23AA /* ScanningViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C401445219D47DD003976B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C401446219D47DE003976B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C40144E219D4F1A003976B9 /* ScanningVM.h */,
+				5C40144F219D4F1A003976B9 /* ScanningVM.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C401447219D484C003976B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E30C07A1EB1CDEE0000F65E /* ShadowView.h */,
+				6E30C07B1EB1CDEE0000F65E /* ShadowView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6E7AAAD71E8E9C6400EE23AA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +365,8 @@
 				6E7AAAFC1E8E9C6500EE23AA /* ScanningTests */,
 				6E7AAB071E8E9C6500EE23AA /* ScanningUITests */,
 				6E7AAAE11E8E9C6500EE23AA /* Products */,
+				C355C771397163837EC00B9D /* Pods */,
+				D79A0F04E8A3D045A79518A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,19 +383,13 @@
 		6E7AAAE21E8E9C6500EE23AA /* Scanning */ = {
 			isa = PBXGroup;
 			children = (
-				6E7AAAE61E8E9C6500EE23AA /* AppDelegate.h */,
-				6E7AAAE71E8E9C6500EE23AA /* AppDelegate.m */,
-				6E7AAAE91E8E9C6500EE23AA /* ViewController.h */,
-				6E7AAAEA1E8E9C6500EE23AA /* ViewController.m */,
-				6E7AAB161E8EA3FE00EE23AA /* ScanningViewController.h */,
-				6E7AAB171E8EA3FE00EE23AA /* ScanningViewController.m */,
-				6E30C07A1EB1CDEE0000F65E /* ShadowView.h */,
-				6E30C07B1EB1CDEE0000F65E /* ShadowView.m */,
-				6E7AAAEC1E8E9C6500EE23AA /* Main.storyboard */,
-				6E7AAAEF1E8E9C6500EE23AA /* Assets.xcassets */,
-				6E7AAAF11E8E9C6500EE23AA /* LaunchScreen.storyboard */,
-				6E7AAAF41E8E9C6500EE23AA /* Info.plist */,
-				6E7AAAE31E8E9C6500EE23AA /* Supporting Files */,
+				5C40141F219D188B003976B9 /* Common */,
+				5C4013F8219D187F003976B9 /* Tools */,
+				5C401444219D47DD003976B9 /* Controller */,
+				5C401445219D47DD003976B9 /* Model */,
+				5C401447219D484C003976B9 /* View */,
+				5C401446219D47DE003976B9 /* ViewModel */,
+				5C401442219D47DD003976B9 /* Other */,
 			);
 			path = Scanning;
 			sourceTree = "<group>";
@@ -130,6 +400,7 @@
 				6E7AAAE41E8E9C6500EE23AA /* main.m */,
 			);
 			name = "Supporting Files";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		6E7AAAFC1E8E9C6500EE23AA /* ScanningTests */ = {
@@ -150,6 +421,29 @@
 			path = ScanningUITests;
 			sourceTree = "<group>";
 		};
+		C355C771397163837EC00B9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35D9BB02EAB5EC6CC22718A3 /* Pods-Scanning.debug.xcconfig */,
+				58C738F067669A278F55E777 /* Pods-Scanning.release.xcconfig */,
+				F590DE474E1747D434B44CE9 /* Pods-ScanningTests.debug.xcconfig */,
+				E88E30D20D572FF5D35F4D21 /* Pods-ScanningTests.release.xcconfig */,
+				EBC14B70FD153E8E9184AA8D /* Pods-ScanningUITests.debug.xcconfig */,
+				FEC4D0FB77916244829DE01B /* Pods-ScanningUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D79A0F04E8A3D045A79518A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5381CC8A979468E53DAEA321 /* libPods-Scanning.a */,
+				C92E8F70993016BAE69E6662 /* libPods-ScanningTests.a */,
+				3FC9EF6EC80CD55B5AC3D611 /* libPods-ScanningUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +451,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E7AAB0D1E8E9C6500EE23AA /* Build configuration list for PBXNativeTarget "Scanning" */;
 			buildPhases = (
+				4AB5D9DDDADD358E46230675 /* [CP] Check Pods Manifest.lock */,
 				6E7AAADC1E8E9C6500EE23AA /* Sources */,
 				6E7AAADD1E8E9C6500EE23AA /* Frameworks */,
 				6E7AAADE1E8E9C6500EE23AA /* Resources */,
@@ -174,6 +469,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E7AAB101E8E9C6500EE23AA /* Build configuration list for PBXNativeTarget "ScanningTests" */;
 			buildPhases = (
+				97FD3C3A308EAC9B7F5F08EC /* [CP] Check Pods Manifest.lock */,
 				6E7AAAF51E8E9C6500EE23AA /* Sources */,
 				6E7AAAF61E8E9C6500EE23AA /* Frameworks */,
 				6E7AAAF71E8E9C6500EE23AA /* Resources */,
@@ -192,6 +488,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E7AAB131E8E9C6500EE23AA /* Build configuration list for PBXNativeTarget "ScanningUITests" */;
 			buildPhases = (
+				E6FC2E3165D3D519641A9FB7 /* [CP] Check Pods Manifest.lock */,
 				6E7AAB001E8E9C6500EE23AA /* Sources */,
 				6E7AAB011E8E9C6500EE23AA /* Frameworks */,
 				6E7AAB021E8E9C6500EE23AA /* Resources */,
@@ -279,16 +576,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AB5D9DDDADD358E46230675 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scanning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97FD3C3A308EAC9B7F5F08EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanningTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6FC2E3165D3D519641A9FB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanningUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E7AAADC1E8E9C6500EE23AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7AAAEB1E8E9C6500EE23AA /* ViewController.m in Sources */,
+				5C40143A219D188B003976B9 /* BaseM.m in Sources */,
+				5C401440219D188B003976B9 /* CommonTableViewCellVM.m in Sources */,
+				5C401417219D1880003976B9 /* QSPTableViewFooterView.m in Sources */,
+				5C40143F219D188B003976B9 /* BaseVM.m in Sources */,
+				6E7AAAEB1E8E9C6500EE23AA /* MainViewController.m in Sources */,
+				5C40143D219D188B003976B9 /* CommonTableViewCell.m in Sources */,
+				5C40143E219D188B003976B9 /* CommonTableViewHeaderView.m in Sources */,
+				5C40141D219D1880003976B9 /* QSPTableViewVM.m in Sources */,
+				5C401441219D188B003976B9 /* CommonTableViewSectionVM.m in Sources */,
 				6E7AAAE81E8E9C6500EE23AA /* AppDelegate.m in Sources */,
+				5C401414219D1880003976B9 /* UITableView+QSPMVVM.m in Sources */,
+				5C401418219D1880003976B9 /* QSPTableViewHeaderView.m in Sources */,
+				5C40141B219D1880003976B9 /* QSPTableViewCellVM.m in Sources */,
+				5C401439219D188B003976B9 /* BaseViewController.m in Sources */,
+				5C40141A219D1880003976B9 /* QSPScrollViewVM.m in Sources */,
+				5C40141E219D1880003976B9 /* QSPViewVM.m in Sources */,
+				5C40141C219D1880003976B9 /* QSPTableViewSectionVM.m in Sources */,
+				5C40143C219D188B003976B9 /* ConFunc.m in Sources */,
 				6E7AAAE51E8E9C6500EE23AA /* main.m in Sources */,
+				5C401450219D4F1A003976B9 /* ScanningVM.m in Sources */,
+				5C401419219D1880003976B9 /* QSPView.m in Sources */,
+				5C401416219D1880003976B9 /* QSPTableViewCell.m in Sources */,
+				5C401415219D1880003976B9 /* QSPTableViewSectionM.m in Sources */,
 				6E30C07C1EB1CDEE0000F65E /* ShadowView.m in Sources */,
 				6E7AAB181E8EA3FE00EE23AA /* ScanningViewController.m in Sources */,
+				5C40143B219D188B003976B9 /* CommonM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,32 +820,45 @@
 		};
 		6E7AAB0E1E8E9C6500EE23AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35D9BB02EAB5EC6CC22718A3 /* Pods-Scanning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CBB7T9SG3B;
-				INFOPLIST_FILE = Scanning/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Scanning/Common/Source/PrefixHeader.pch";
+				INFOPLIST_FILE = Scanning/Other/System/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etongxing.www.Scanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		6E7AAB0F1E8E9C6500EE23AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58C738F067669A278F55E777 /* Pods-Scanning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CBB7T9SG3B;
-				INFOPLIST_FILE = Scanning/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Scanning/Common/Source/PrefixHeader.pch";
+				INFOPLIST_FILE = Scanning/Other/System/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etongxing.www.Scanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		6E7AAB111E8E9C6500EE23AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F590DE474E1747D434B44CE9 /* Pods-ScanningTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ScanningTests/Info.plist;
@@ -471,6 +871,7 @@
 		};
 		6E7AAB121E8E9C6500EE23AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E88E30D20D572FF5D35F4D21 /* Pods-ScanningTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ScanningTests/Info.plist;
@@ -483,6 +884,7 @@
 		};
 		6E7AAB141E8E9C6500EE23AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBC14B70FD153E8E9184AA8D /* Pods-ScanningUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ScanningUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -494,6 +896,7 @@
 		};
 		6E7AAB151E8E9C6500EE23AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEC4D0FB77916244829DE01B /* Pods-ScanningUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ScanningUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
