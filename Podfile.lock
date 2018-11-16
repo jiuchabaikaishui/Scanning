@@ -1,16 +1,20 @@
 PODS:
   - ReactiveObjC (3.1.0)
+  - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
   - ReactiveObjC (~> 3.1.0)
+  - ZBarSDK (~> 1.3.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ReactiveObjC
+    - ZBarSDK
 
 SPEC CHECKSUMS:
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-PODFILE CHECKSUM: 684d6491c6cc85e4f800c5bd0714d2a40d57f35b
+PODFILE CHECKSUM: 789d4424ad10bd1a2701ff61edc901e41d4a18be
 
 COCOAPODS: 1.5.3

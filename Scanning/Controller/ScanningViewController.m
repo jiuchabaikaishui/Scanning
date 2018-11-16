@@ -21,25 +21,20 @@
 
 @implementation ScanningViewController
 
-//- (void)loadView
-//{
-//    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.view.backgroundColor = [UIColor redColor];
-//}
-+ (instancetype)create:(void (^)(ScanningVM *))vmBlock {
-    ScanningViewController *result = [[self alloc] init];
-    ScanningVM *vm = [ScanningVM create];
-    vmBlock(vm);
-    result.vm = vm;
-    
-    return result;
+#pragma mark - 属性方法
+- (ScanningVM *)scanningVM {
+    return (ScanningVM *)super.vm;
 }
+
+#pragma mark - 控制器周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self settingUI];
     [self bindVM];
 }
+
+#pragma mark - 自定义方法
 - (void)settingUI {
     //    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
     PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
@@ -78,7 +73,7 @@
     //    [self loadScanView];
 }
 - (void)bindVM {
-    self.title = self.vm.title;
+    self.title = self.scanningVM.title;
 }
 
 - (void)loadScanView{
@@ -92,7 +87,7 @@
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     NSLog(@"%@", NSStringFromCGRect(output.rectOfInterest));
-    if (self.vm.rectOfInterest) {
+    if (self.scanningVM.rectOfInterest) {
         CGFloat margin = self.view.frame.size.width/6.0;
         CGFloat X = margin;
         CGFloat W = margin*4;
@@ -103,9 +98,8 @@
     }
     if ([session canAddOutput:output]) {
         [session addOutput:output];
+        output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
     }
-    output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode
-                                   ];
     
     AVCaptureVideoPreviewLayer *layer = [AVCaptureVideoPreviewLayer layerWithSession:session];
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;

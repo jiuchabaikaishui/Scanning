@@ -6,10 +6,12 @@
 //  Copyright © 2017年 PowesunHolding. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+#import "MainVM.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : BaseViewController
 
+@property (strong, nonatomic, readonly) MainVM *mainVM;
 
 @end
 

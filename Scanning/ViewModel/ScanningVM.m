@@ -13,13 +13,6 @@
 + (instancetype)create {
     return [[self alloc] init];
 }
-- (ScanningVM * (^)(NSString *))titleSet {
-    return ^(NSString *title) {
-        _title = title;
-        
-        return self;
-    };
-}
 - (ScanningVM * (^)(BOOL))rectOfInterestSet {
     return ^(BOOL rectOfInterest) {
         _rectOfInterest = rectOfInterest;

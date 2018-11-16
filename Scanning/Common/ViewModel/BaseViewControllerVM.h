@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseVM : QSPViewVM
+@interface BaseViewControllerVM : QSPViewVM
+
+@property (copy, nonatomic, copy) NSString *title;
+
+- (BaseViewControllerVM * (^)(NSString *))titleSet;
 
 @end
 

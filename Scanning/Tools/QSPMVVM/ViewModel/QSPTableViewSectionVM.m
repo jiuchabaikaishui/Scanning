@@ -184,8 +184,11 @@
     };
 }
 
-- (QSPTableViewCellVM *)rowModelWithRow:(NSInteger)row {
+- (QSPTableViewCellVM *)rowVMWithRow:(NSInteger)row {
     return [self.rowVMs objectAtIndex:row];
+}
+- (NSArray *)allRowVM {
+    return [NSArray arrayWithArray:self.rowVMs];
 }
 - (NSInteger)rowOfCellVM:(QSPTableViewCellVM *)vm {
     return [self.rowVMs indexOfObject:vm];

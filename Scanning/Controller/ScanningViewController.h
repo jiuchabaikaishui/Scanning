@@ -6,13 +6,11 @@
 //  Copyright © 2017年 PowesunHolding. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import "ScanningVM.h"
 
-@interface ScanningViewController : UIViewController
+@interface ScanningViewController : BaseViewController
 
-@property (strong, nonatomic) ScanningVM *vm;
-
-+ (instancetype)create:(void (^)(ScanningVM *vm))vmBlock;
+@property (strong, nonatomic, readonly) ScanningVM *scanningVM;
 
 @end

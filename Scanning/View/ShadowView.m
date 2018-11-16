@@ -37,7 +37,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"我销毁了！");
+    DebugLog(@"%@销毁了", NSStringFromClass(self.class));
     if (self.timer.isValid) {
         [self.timer invalidate];
         self.timer = nil;

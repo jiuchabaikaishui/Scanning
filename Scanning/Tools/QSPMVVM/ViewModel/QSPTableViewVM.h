@@ -63,6 +63,7 @@ typedef void (^QSPCreateObjectBlock)(id);
 
 - (id)sectionVMWithSection:(NSInteger)section;
 - (id)rowVMWithIndexPath:(NSIndexPath *)indexPath;
+- (NSArray *)allRowVM;
 - (NSInteger)sectionOfSctionVM:(QSPTableViewSectionVM *)vm;
 
 @property (strong, nonatomic, readonly) RACSignal *didSelectRowSignal;

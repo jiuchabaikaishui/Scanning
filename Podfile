@@ -7,6 +7,7 @@ target 'Scanning' do
 
   # Pods for Scanning
     pod 'ReactiveObjC', '~> 3.1.0'
+    pod 'ZBarSDK', '~> 1.3.1'
 
   target 'ScanningTests' do
     inherit! :search_paths

@@ -18,7 +18,23 @@
 - (void)dealloc {
     DebugLog(@"%@销毁了", NSStringFromClass(self.class));
 }
-
++ (instancetype)controllerWithVM:(BaseViewControllerVM *)vm {
+    return [[self alloc] initWithVM:vm];
+}
+- (instancetype)initWithVM:(BaseViewControllerVM *)vm {
+    if (self = [super init]) {
+        _vm = vm;
+    }
+    
+    return self;
+}
+-(instancetype)initWithCoder:(NSCoder *)aDecoder andVM:(BaseViewControllerVM *)vm {
+    if (self = [super initWithCoder:aDecoder]) {
+        _vm = vm;
+    }
+    
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

@@ -53,8 +53,10 @@
     if (self = [super init]) {
         self.tableFooterViewCreate(UIView.class, nil);
         
+        @weakify(self);
         _didSelectRowSignal = [RACSignal defer:^RACSignal * _Nonnull{
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                @strongify(self);
                 self.didSelectRowSubscriber = subscriber;
                 return [RACDisposable disposableWithBlock:^{
                     [subscriber sendCompleted];
@@ -236,7 +238,15 @@
     return [self.sectionVMs objectAtIndex:section];
 }
 - (id)rowVMWithIndexPath:(NSIndexPath *)indexPath {
-    return [[self.sectionVMs objectAtIndex:indexPath.section] rowModelWithRow:indexPath.row];
+    return [[self.sectionVMs objectAtIndex:indexPath.section] rowVMWithRow:indexPath.row];
+}
+- (NSArray *)allRowVM {
+    NSMutableArray *mArr = [NSMutableArray arrayWithCapacity:1];
+    for (QSPTableViewSectionVM *sectionVM in self.sectionVMs) {
+        [mArr addObjectsFromArray:[sectionVM allRowVM]];
+    }
+    
+    return [NSArray arrayWithArray:mArr];
 }
 - (NSInteger)sectionOfSctionVM:(QSPTableViewSectionVM *)vm {
     return [self.sectionVMs indexOfObject:vm];

@@ -6,18 +6,16 @@
 //  Copyright © 2018年 PowesunHolding. All rights reserved.
 //
 
-#import "BaseVM.h"
+#import "BaseViewControllerVM.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ScanningVM : BaseVM
+@interface ScanningVM : BaseViewControllerVM
 
-@property (copy, nonatomic, copy) NSString *title;
 @property (assign, nonatomic, readonly) BOOL rectOfInterest;
 
 + (instancetype)create;
 - (ScanningVM * (^)(BOOL))rectOfInterestSet;
-- (ScanningVM * (^)(NSString *))titleSet;
 
 @end
 

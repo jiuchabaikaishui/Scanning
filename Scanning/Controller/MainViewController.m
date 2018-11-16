@@ -9,8 +9,9 @@
 #import "MainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ScanningViewController.h"
+#import "ZBarSDK.h"
 
-@interface MainViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface MainViewController () <UINavigationControllerDelegate, ZBarReaderDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -18,57 +19,95 @@
 
 @implementation MainViewController
 
+#pragma mark - 属性方法
+- (MainVM *)mainVM {
+    return (MainVM *)super.vm;
+}
+
+#pragma mark - 控制器周期
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder andVM:[[MainVM alloc] init]]) {
+        
+    }
+    
+    return self;
+}
+- (instancetype)init {
+    if (self = [super initWithVM:[[MainVM alloc] init]]) {
+        
+    }
+    
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self settingUI];
+    [self bindVM];
+}
+
+#pragma mark - 自定义方法
+- (void)settingUI {
+    
+}
+- (void)bindVM {
+    self.tableView.vmSet(self.mainVM.tableViewVM);
     @weakify(self);
-    self.tableView.vmCreate(^(QSPTableViewVM *vm){
-        vm.addSectionVMCreate(CommonTableViewSectionVM.class, ^(CommonTableViewSectionVM *sectionVM){
-            @strongify(self);
-            sectionVM.addRowVMCreate(CommonTableViewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                    @strongify(self);
-                    [self.navigationController pushViewController:[ScanningViewController create:^(ScanningVM *scanningVM) {
-                        scanningVM.titleSet(@"扫一扫").rectOfInterestSet(NO);
-                    }] animated:YES];
-                }).dataMCreate(CommonM.class, ^(CommonM *model){
-                    model.titleSet(@"扫一扫").detailSet(@"不设置rectOfInterest");
-                });
-            });
-            sectionVM.addRowVMCreate(CommonTableViewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                    @strongify(self);
-                    [self.navigationController pushViewController:[ScanningViewController create:^(ScanningVM *scanningVM) {
-                        scanningVM.titleSet(@"扫一扫").rectOfInterestSet(YES);
-                    }] animated:YES];
-                }).dataMCreate(CommonM.class, ^(CommonM *model){
-                    model.titleSet(@"扫一扫").detailSet(@"设置rectOfInterest");
-                });
-            });
-            sectionVM.addRowVMCreate(CommonTableViewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                    @strongify(self);
+    [self.mainVM.tableViewVM.didSelectRowSignal subscribeNext:^(QSPTableViewAndIndexPath *x) {
+        @strongify(self);
+        MainTableVIewCellVM *cellVM = [x.tableView.vm rowVMWithIndexPath:x.indexPath];
+        if ([cellVM.nextVM isKindOfClass:ScanningVM.class]) {
+            [self.navigationController pushViewController:[ScanningViewController controllerWithVM:cellVM.nextVM] animated:YES];
+        } else if ([cellVM.nextVM isKindOfClass:ImagePickerVM.class]) {
+            ImagePickerVM *imagePickerVM = (ImagePickerVM *)cellVM.nextVM;
+            switch (imagePickerVM.type) {
+                case ImagePickerVMTypeCIDetector:
+                {
                     UIImagePickerController *controller = controller = [[UIImagePickerController alloc] init];
                     controller.delegate = self;
                     controller.navigationBar.tintColor = [UIColor blackColor];
                     controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                     [self presentViewController:controller animated:YES completion:nil];
-                }).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(@"识别图片").detailSet(@"CIDetector");
-                    });
-            });
-        });
-    });
+                }
+                    break;
+                case ImagePickerVMTypeZBarSDK:
+                {
+                    ZBarReaderController *imagePicker = [ZBarReaderController new];
+                    
+                    imagePicker.showsHelpOnFail = NO; // 禁止显示读取失败页面
+                    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    imagePicker.delegate = self;
+                    imagePicker.allowsEditing = YES;
+                    [self presentViewController:imagePicker animated:YES completion:nil];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+    }];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [picker dismissViewControllerAnimated:YES completion:^{// 创建探测器 CIDetectorTypeQRCode
-        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
-        [picker dismissViewControllerAnimated:YES completion:^{
+    NSString *QRCodeString = nil;
+    if ([picker isKindOfClass:ZBarReaderController.class]) {
+        id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
+        
+        ZBarSymbol *symbol = nil;
+        
+        for(symbol in results) {
             
-        }];
+            break;
+        }
+        
+        //二维码字符串
+        QRCodeString =  symbol.data;
+    } else {
+        // 创建探测器 CIDetectorTypeQRCode
+        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
         
         // 取出选中的图片
         UIImage *pickImage = info[UIImagePickerControllerOriginalImage];
@@ -77,20 +116,23 @@
         NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:[self imageSizeWithScreenImage:pickImage].CGImage]];
         
         // 判断是否有数据（即是否是二维码）
-        NSString *scannedResult = nil;
         if (features.count > 0) {
             // 取第一个元素就是二维码所存放的文本信息
             CIQRCodeFeature *feature = features[0];
-            scannedResult = feature.messageString ? feature.messageString : nil;
+            QRCodeString = feature.messageString ? feature.messageString : nil;
         }
-        
-        UIAlertController *nextCtr = [UIAlertController alertControllerWithTitle:@"识别结果" message:scannedResult ? scannedResult : @"未识别图片中的二维码" preferredStyle:UIAlertControllerStyleAlert];
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        UIAlertController *nextCtr = [UIAlertController alertControllerWithTitle:@"识别结果" message:QRCodeString ? QRCodeString : @"未识别图片中的二维码" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
         [nextCtr addAction:okAction];
         [self presentViewController:nextCtr animated:YES completion:nil];
     }];
 }
-
+- (void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry {
+    
+}
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:^{

@@ -26,13 +26,16 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        @weakify(self);
         _didScrollSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            @strongify(self);
             self.didScrollSubscriber = subscriber;
             return [RACDisposable disposableWithBlock:^{
                 [subscriber sendCompleted];
             }];
         }];
         _didEndDeceleratingSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            @strongify(self);
             self.didEndDeceleratingSubscriber = subscriber;
             return [RACDisposable disposableWithBlock:^{
                 [subscriber sendCompleted];
