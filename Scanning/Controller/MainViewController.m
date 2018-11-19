@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ScanningViewController.h"
 #import "ZBarSDK.h"
+#import "UIImage+Recognition.h"
 
 @interface MainViewController () <UINavigationControllerDelegate, ZBarReaderDelegate>
 
@@ -65,6 +66,7 @@
                 {
                     UIImagePickerController *controller = controller = [[UIImagePickerController alloc] init];
                     controller.delegate = self;
+                    controller.allowsEditing = NO;
                     controller.navigationBar.tintColor = [UIColor blackColor];
                     controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                     [self presentViewController:controller animated:YES completion:nil];
@@ -73,7 +75,6 @@
                 case ImagePickerVMTypeZBarSDK:
                 {
                     ZBarReaderController *imagePicker = [ZBarReaderController new];
-                    
                     imagePicker.showsHelpOnFail = NO; // 禁止显示读取失败页面
                     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
                     imagePicker.delegate = self;
@@ -92,7 +93,6 @@
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSString *QRCodeString = nil;
     if ([picker isKindOfClass:ZBarReaderController.class]) {
         id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
         
@@ -104,31 +104,46 @@
         }
         
         //二维码字符串
-        QRCodeString =  symbol.data;
+        NSString *QRCodeString =  symbol.data;
+        
+        [picker dismissViewControllerAnimated:YES completion:^{
+            UIAlertController *nextCtr = [UIAlertController alertControllerWithTitle:@"识别结果" message:QRCodeString ? QRCodeString : @"未识别图片中的二维码" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [nextCtr addAction:okAction];
+            [self presentViewController:nextCtr animated:YES completion:nil];
+        }];
     } else {
-        // 创建探测器 CIDetectorTypeQRCode
-        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
         
         // 取出选中的图片
-        UIImage *pickImage = info[UIImagePickerControllerOriginalImage];
+//        UIImage *pickImage = info[UIImagePickerControllerOriginalImage];//获取选中的照片
+        UIImage *pickImage = info[UIImagePickerControllerEditedImage];
         
-        // 设置数组，放置识别完之后的数据
-        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:[self imageSizeWithScreenImage:pickImage].CGImage]];
-        
-        // 判断是否有数据（即是否是二维码）
-        if (features.count > 0) {
-            // 取第一个元素就是二维码所存放的文本信息
-            CIQRCodeFeature *feature = features[0];
-            QRCodeString = feature.messageString ? feature.messageString : nil;
+        if (!pickImage) {
+            pickImage = info[UIImagePickerControllerOriginalImage];
         }
+        
+//        // 创建探测器 CIDetectorTypeQRCode
+//        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
+//
+//        // 设置数组，放置识别完之后的数据
+//        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:[self image:pickImage toSize:CGSizeMake(pickImage.size.width*5, pickImage.size.height*5)].CGImage]];
+//
+//        // 判断是否有数据（即是否是二维码）
+//        if (features.count > 0) {
+//            // 取第一个元素就是二维码所存放的文本信息
+//            CIQRCodeFeature *feature = features[0];
+//            QRCodeString = feature.messageString ? feature.messageString : nil;
+//        }
+        
+        [pickImage QRRecognite:^(NSString *codeStr) {
+            [picker dismissViewControllerAnimated:YES completion:^{
+                UIAlertController *nextCtr = [UIAlertController alertControllerWithTitle:@"识别结果" message:codeStr ? codeStr : @"未识别图片中的二维码" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+                [nextCtr addAction:okAction];
+                [self presentViewController:nextCtr animated:YES completion:nil];
+            }];
+        }];
     }
-    
-    [picker dismissViewControllerAnimated:YES completion:^{
-        UIAlertController *nextCtr = [UIAlertController alertControllerWithTitle:@"识别结果" message:QRCodeString ? QRCodeString : @"未识别图片中的二维码" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        [nextCtr addAction:okAction];
-        [self presentViewController:nextCtr animated:YES completion:nil];
-    }];
 }
 - (void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry {
     
@@ -153,6 +168,10 @@
     CGFloat scale = max / (screenHeight * 2.0);
     
     CGSize size = CGSizeMake(imageWidth / scale, imageHeight / scale);
+    
+    return [self image:image toSize:size];
+}
+- (UIImage *)image:(UIImage *)image toSize:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

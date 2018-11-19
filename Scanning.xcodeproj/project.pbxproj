@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F53FD516E70D4C810C19678 /* libPods-ScanningTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C92E8F70993016BAE69E6662 /* libPods-ScanningTests.a */; };
+		5C2822C221A260B400F7EC1D /* UIImage+Recognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2822C121A260B400F7EC1D /* UIImage+Recognition.m */; };
 		5C401414219D1880003976B9 /* UITableView+QSPMVVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4013FC219D187F003976B9 /* UITableView+QSPMVVM.m */; };
 		5C401415219D1880003976B9 /* QSPTableViewSectionM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401400219D187F003976B9 /* QSPTableViewSectionM.m */; };
 		5C401416219D1880003976B9 /* QSPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401402219D187F003976B9 /* QSPTableViewCell.m */; };
@@ -68,6 +69,8 @@
 		3FC9EF6EC80CD55B5AC3D611 /* libPods-ScanningUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanningUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5381CC8A979468E53DAEA321 /* libPods-Scanning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scanning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C738F067669A278F55E777 /* Pods-Scanning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scanning.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scanning/Pods-Scanning.release.xcconfig"; sourceTree = "<group>"; };
+		5C2822C021A260B400F7EC1D /* UIImage+Recognition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Recognition.h"; sourceTree = "<group>"; };
+		5C2822C121A260B400F7EC1D /* UIImage+Recognition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Recognition.m"; sourceTree = "<group>"; };
 		5C4013FB219D187F003976B9 /* UITableView+QSPMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+QSPMVVM.h"; sourceTree = "<group>"; };
 		5C4013FC219D187F003976B9 /* UITableView+QSPMVVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+QSPMVVM.m"; sourceTree = "<group>"; };
 		5C4013FF219D187F003976B9 /* QSPTableViewSectionM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSPTableViewSectionM.h; sourceTree = "<group>"; };
@@ -373,6 +376,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5CD783AC21A2C47E0056EA10 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5CD783AD21A2C47E0056EA10 /* UIImage */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5CD783AD21A2C47E0056EA10 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				5C2822C021A260B400F7EC1D /* UIImage+Recognition.h */,
+				5C2822C121A260B400F7EC1D /* UIImage+Recognition.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		6E7AAAD71E8E9C6400EE23AA = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +420,7 @@
 			children = (
 				5C40141F219D188B003976B9 /* Common */,
 				5C4013F8219D187F003976B9 /* Tools */,
+				5CD783AC21A2C47E0056EA10 /* Category */,
 				5C401444219D47DD003976B9 /* Controller */,
 				5C401445219D47DD003976B9 /* Model */,
 				5C401447219D484C003976B9 /* View */,
@@ -723,6 +744,7 @@
 				6E30C07C1EB1CDEE0000F65E /* ShadowView.m in Sources */,
 				6E7AAB181E8EA3FE00EE23AA /* ScanningViewController.m in Sources */,
 				5C40143B219D188B003976B9 /* CommonM.m in Sources */,
+				5C2822C221A260B400F7EC1D /* UIImage+Recognition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

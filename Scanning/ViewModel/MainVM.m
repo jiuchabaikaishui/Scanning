@@ -37,6 +37,37 @@
                         model.titleSet(title).detailSet(@"ZBarSDK");
                     });
                 });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
+                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
+                        for (int index = 0; index < 100000; index++) {
+                            UILabel *label = [[UILabel alloc] init];
+                        }
+                    }).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"ZBarSDK");
+                    });
+                });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
+                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
+                        for (int index = 0; index < 100000; index++) {
+                            @autoreleasepool {
+                                UILabel *label = [[UILabel alloc] init];
+                            }
+                        }
+                    }).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"ZBarSDK");
+                    });
+                });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
+                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
+                        @autoreleasepool {
+                            for (int index = 0; index < 100000; index++) {
+                                UILabel *label = [[UILabel alloc] init];
+                            }
+                        }
+                    }).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"ZBarSDK");
+                    });
+                });
             });
         }];
     }
