@@ -1,20 +1,26 @@
 PODS:
   - ReactiveObjC (3.1.0)
   - ZBarSDK (1.3.1)
+  - ZXingObjC (3.6.1):
+    - ZXingObjC/All (= 3.6.1)
+  - ZXingObjC/All (3.6.1)
 
 DEPENDENCIES:
   - ReactiveObjC (~> 3.1.0)
   - ZBarSDK (~> 1.3.1)
+  - ZXingObjC (~> 3.6.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ReactiveObjC
     - ZBarSDK
+    - ZXingObjC
 
 SPEC CHECKSUMS:
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
+  ZXingObjC: 4ed7bbb878b2cff73b3c02f6f87be9baf65097ef
 
-PODFILE CHECKSUM: 789d4424ad10bd1a2701ff61edc901e41d4a18be
+PODFILE CHECKSUM: 04fe06a58d1868d47bfc26ce772d5e5909d3ab53
 
 COCOAPODS: 1.5.3

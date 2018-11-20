@@ -36,7 +36,6 @@
 
 #pragma mark - 自定义方法
 - (void)settingUI {
-    //    ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
     PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
     if (authStatus == PHAuthorizationStatusRestricted || authStatus == PHAuthorizationStatusDenied)
     {
@@ -59,18 +58,6 @@
     ShadowView *view = [[ShadowView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:view];
     self.shadowView = view;
-    
-    //    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-    //        if (granted) {
-    //            [self loadScanView];
-    //        }
-    //        else
-    //        {
-    //            NSLog(@"无权限访问相机！");
-    //        }
-    //    }];
-    
-    //    [self loadScanView];
 }
 - (void)bindVM {
     self.title = self.scanningVM.title;

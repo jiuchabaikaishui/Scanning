@@ -16,6 +16,7 @@
         _tableViewVM = [QSPTableViewVM create:^(QSPTableViewVM *vm) {
             vm.addSectionVMCreate(CommonTableViewSectionVM.class, ^(CommonTableViewSectionVM *sectionVM){
                 NSString *title = @"扫一扫";
+                sectionVM.dataMCreate(CommonM.class, ^(CommonM *model){ model.titleSet(@"原生SDK").detailSet(@"有局限"); });
                 sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
                     cellVM.nextVMSet([ScanningVM create].rectOfInterestSet(NO).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
                         model.titleSet(title).detailSet(@"不设置rectOfInterest");
@@ -32,40 +33,19 @@
                         model.titleSet(title).detailSet(@"CIDetector");
                     });
                 });
+            });
+            vm.addSectionVMCreate(CommonTableViewSectionVM.class, ^(CommonTableViewSectionVM *sectionVM){
+                NSString *title = @"扫一扫";
+                sectionVM.dataMCreate(CommonM.class, ^(CommonM *model){ model.titleSet(@"ZBarSDK").detailSet(@"有问题"); });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
+                    cellVM.nextVMSet([ScanningVM create].rectOfInterestSet(NO).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"ZBarReaderViewController直接打开一个扫描界面进行扫描");
+                    });
+                });
+                title = @"识别图片";
                 sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
                     cellVM.nextVMSet([ImagePickerVM create].typeSet(ImagePickerVMTypeZBarSDK)).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"ZBarSDK");
-                    });
-                });
-                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                        for (int index = 0; index < 100000; index++) {
-                            UILabel *label = [[UILabel alloc] init];
-                        }
-                    }).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"ZBarSDK");
-                    });
-                });
-                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                        for (int index = 0; index < 100000; index++) {
-                            @autoreleasepool {
-                                UILabel *label = [[UILabel alloc] init];
-                            }
-                        }
-                    }).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"ZBarSDK");
-                    });
-                });
-                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(CommonTableViewCellVM *cellVM){
-                    cellVM.selectedBlockSet(^(UITableView *tableView, NSIndexPath *indexPath){
-                        @autoreleasepool {
-                            for (int index = 0; index < 100000; index++) {
-                                UILabel *label = [[UILabel alloc] init];
-                            }
-                        }
-                    }).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"ZBarSDK");
+                        model.titleSet(title).detailSet(@"ZBarSDK").detailSet(@"有问题，勿点");
                     });
                 });
             });

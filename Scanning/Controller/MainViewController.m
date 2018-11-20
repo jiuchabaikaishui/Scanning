@@ -113,27 +113,11 @@
             [self presentViewController:nextCtr animated:YES completion:nil];
         }];
     } else {
-        
         // 取出选中的图片
-//        UIImage *pickImage = info[UIImagePickerControllerOriginalImage];//获取选中的照片
         UIImage *pickImage = info[UIImagePickerControllerEditedImage];
-        
         if (!pickImage) {
             pickImage = info[UIImagePickerControllerOriginalImage];
         }
-        
-//        // 创建探测器 CIDetectorTypeQRCode
-//        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
-//
-//        // 设置数组，放置识别完之后的数据
-//        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:[self image:pickImage toSize:CGSizeMake(pickImage.size.width*5, pickImage.size.height*5)].CGImage]];
-//
-//        // 判断是否有数据（即是否是二维码）
-//        if (features.count > 0) {
-//            // 取第一个元素就是二维码所存放的文本信息
-//            CIQRCodeFeature *feature = features[0];
-//            QRCodeString = feature.messageString ? feature.messageString : nil;
-//        }
         
         [pickImage QRRecognite:^(NSString *codeStr) {
             [picker dismissViewControllerAnimated:YES completion:^{
@@ -153,31 +137,6 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         
     }];
-}
-- (UIImage *)imageSizeWithScreenImage:(UIImage *)image {
-    CGFloat imageWidth = image.size.width;
-    CGFloat imageHeight = image.size.height;
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    
-    if (imageWidth <= screenWidth && imageHeight <= screenHeight) {
-        return image;
-    }
-    
-    CGFloat max = MAX(imageWidth, imageHeight);
-    CGFloat scale = max / (screenHeight * 2.0);
-    
-    CGSize size = CGSizeMake(imageWidth / scale, imageHeight / scale);
-    
-    return [self image:image toSize:size];
-}
-- (UIImage *)image:(UIImage *)image toSize:(CGSize)size {
-    UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
 }
 
 @end
