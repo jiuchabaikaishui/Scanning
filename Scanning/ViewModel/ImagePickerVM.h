@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, ImagePickerVMType) {
     ImagePickerVMTypeCIDetector = 0,
-    ImagePickerVMTypeZBarSDK = 1
+    ImagePickerVMTypeZXingSDK = 1,
+    ImagePickerVMTypeZBarSDK = 2
 };
 @interface ImagePickerVM : BaseViewControllerVM <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 

@@ -10,12 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ScanningVM : BaseViewControllerVM
+@interface NativeScanningVM : BaseViewControllerVM
 
 @property (assign, nonatomic, readonly) BOOL rectOfInterest;
 
 + (instancetype)create;
-- (ScanningVM * (^)(BOOL))rectOfInterestSet;
+- (NativeScanningVM * (^)(BOOL))rectOfInterestSet;
 
 @end
 

@@ -29,10 +29,13 @@
 		5C40143F219D188B003976B9 /* BaseViewControllerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401434219D188B003976B9 /* BaseViewControllerVM.m */; };
 		5C401440219D188B003976B9 /* CommonTableViewCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401436219D188B003976B9 /* CommonTableViewCellVM.m */; };
 		5C401441219D188B003976B9 /* CommonTableViewSectionVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401438219D188B003976B9 /* CommonTableViewSectionVM.m */; };
-		5C401450219D4F1A003976B9 /* ScanningVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40144F219D4F1A003976B9 /* ScanningVM.m */; };
+		5C401450219D4F1A003976B9 /* NativeScanningVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40144F219D4F1A003976B9 /* NativeScanningVM.m */; };
 		5C401453219E6F12003976B9 /* MainVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401452219E6F12003976B9 /* MainVM.m */; };
 		5C40145C219E8909003976B9 /* MainTableVIewCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40145B219E8909003976B9 /* MainTableVIewCellVM.m */; };
 		5C401462219EA7F5003976B9 /* ImagePickerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401461219EA7F5003976B9 /* ImagePickerVM.m */; };
+		5CD783B021A501280056EA10 /* ZBarScanningVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD783AF21A501280056EA10 /* ZBarScanningVM.m */; };
+		5CD783B321A54FD50056EA10 /* ZXScanningVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD783B221A54FD50056EA10 /* ZXScanningVM.m */; };
+		5CD783B621A5512D0056EA10 /* ZXScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD783B521A5512D0056EA10 /* ZXScanningViewController.m */; };
 		6E30C07C1EB1CDEE0000F65E /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E30C07B1EB1CDEE0000F65E /* ShadowView.m */; };
 		6E7AAAE51E8E9C6500EE23AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAE41E8E9C6500EE23AA /* main.m */; };
 		6E7AAAE81E8E9C6500EE23AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AAAE71E8E9C6500EE23AA /* AppDelegate.m */; };
@@ -113,14 +116,20 @@
 		5C401436219D188B003976B9 /* CommonTableViewCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCellVM.m; sourceTree = "<group>"; };
 		5C401437219D188B003976B9 /* CommonTableViewSectionVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewSectionVM.h; sourceTree = "<group>"; };
 		5C401438219D188B003976B9 /* CommonTableViewSectionVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewSectionVM.m; sourceTree = "<group>"; };
-		5C40144E219D4F1A003976B9 /* ScanningVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanningVM.h; sourceTree = "<group>"; };
-		5C40144F219D4F1A003976B9 /* ScanningVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanningVM.m; sourceTree = "<group>"; };
+		5C40144E219D4F1A003976B9 /* NativeScanningVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeScanningVM.h; sourceTree = "<group>"; };
+		5C40144F219D4F1A003976B9 /* NativeScanningVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeScanningVM.m; sourceTree = "<group>"; };
 		5C401451219E6F12003976B9 /* MainVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainVM.h; sourceTree = "<group>"; };
 		5C401452219E6F12003976B9 /* MainVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainVM.m; sourceTree = "<group>"; };
 		5C40145A219E8909003976B9 /* MainTableVIewCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableVIewCellVM.h; sourceTree = "<group>"; };
 		5C40145B219E8909003976B9 /* MainTableVIewCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableVIewCellVM.m; sourceTree = "<group>"; };
 		5C401460219EA7F5003976B9 /* ImagePickerVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerVM.h; sourceTree = "<group>"; };
 		5C401461219EA7F5003976B9 /* ImagePickerVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerVM.m; sourceTree = "<group>"; };
+		5CD783AE21A501280056EA10 /* ZBarScanningVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBarScanningVM.h; sourceTree = "<group>"; };
+		5CD783AF21A501280056EA10 /* ZBarScanningVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBarScanningVM.m; sourceTree = "<group>"; };
+		5CD783B121A54FD50056EA10 /* ZXScanningVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXScanningVM.h; sourceTree = "<group>"; };
+		5CD783B221A54FD50056EA10 /* ZXScanningVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXScanningVM.m; sourceTree = "<group>"; };
+		5CD783B421A5512D0056EA10 /* ZXScanningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXScanningViewController.h; sourceTree = "<group>"; };
+		5CD783B521A5512D0056EA10 /* ZXScanningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXScanningViewController.m; sourceTree = "<group>"; };
 		6E30C07A1EB1CDEE0000F65E /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
 		6E30C07B1EB1CDEE0000F65E /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
 		6E7AAAE01E8E9C6500EE23AA /* Scanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -341,6 +350,8 @@
 				6E7AAAEA1E8E9C6500EE23AA /* MainViewController.m */,
 				6E7AAB161E8EA3FE00EE23AA /* ScanningViewController.h */,
 				6E7AAB171E8EA3FE00EE23AA /* ScanningViewController.m */,
+				5CD783B421A5512D0056EA10 /* ZXScanningViewController.h */,
+				5CD783B521A5512D0056EA10 /* ZXScanningViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,10 +370,14 @@
 				5C401452219E6F12003976B9 /* MainVM.m */,
 				5C40145A219E8909003976B9 /* MainTableVIewCellVM.h */,
 				5C40145B219E8909003976B9 /* MainTableVIewCellVM.m */,
-				5C40144E219D4F1A003976B9 /* ScanningVM.h */,
-				5C40144F219D4F1A003976B9 /* ScanningVM.m */,
+				5C40144E219D4F1A003976B9 /* NativeScanningVM.h */,
+				5C40144F219D4F1A003976B9 /* NativeScanningVM.m */,
 				5C401460219EA7F5003976B9 /* ImagePickerVM.h */,
 				5C401461219EA7F5003976B9 /* ImagePickerVM.m */,
+				5CD783AE21A501280056EA10 /* ZBarScanningVM.h */,
+				5CD783AF21A501280056EA10 /* ZBarScanningVM.m */,
+				5CD783B121A54FD50056EA10 /* ZXScanningVM.h */,
+				5CD783B221A54FD50056EA10 /* ZXScanningVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -723,20 +738,23 @@
 				6E7AAAEB1E8E9C6500EE23AA /* MainViewController.m in Sources */,
 				5C40143D219D188B003976B9 /* CommonTableViewCell.m in Sources */,
 				5C40143E219D188B003976B9 /* CommonTableViewHeaderView.m in Sources */,
+				5CD783B021A501280056EA10 /* ZBarScanningVM.m in Sources */,
 				5C40141D219D1880003976B9 /* QSPTableViewVM.m in Sources */,
 				5C401441219D188B003976B9 /* CommonTableViewSectionVM.m in Sources */,
 				6E7AAAE81E8E9C6500EE23AA /* AppDelegate.m in Sources */,
 				5C401414219D1880003976B9 /* UITableView+QSPMVVM.m in Sources */,
 				5C401462219EA7F5003976B9 /* ImagePickerVM.m in Sources */,
 				5C401418219D1880003976B9 /* QSPTableViewHeaderView.m in Sources */,
+				5CD783B321A54FD50056EA10 /* ZXScanningVM.m in Sources */,
 				5C40141B219D1880003976B9 /* QSPTableViewCellVM.m in Sources */,
 				5C401439219D188B003976B9 /* BaseViewController.m in Sources */,
+				5CD783B621A5512D0056EA10 /* ZXScanningViewController.m in Sources */,
 				5C40141A219D1880003976B9 /* QSPScrollViewVM.m in Sources */,
 				5C40141E219D1880003976B9 /* QSPViewVM.m in Sources */,
 				5C40141C219D1880003976B9 /* QSPTableViewSectionVM.m in Sources */,
 				5C40143C219D188B003976B9 /* ConFunc.m in Sources */,
 				6E7AAAE51E8E9C6500EE23AA /* main.m in Sources */,
-				5C401450219D4F1A003976B9 /* ScanningVM.m in Sources */,
+				5C401450219D4F1A003976B9 /* NativeScanningVM.m in Sources */,
 				5C401419219D1880003976B9 /* QSPView.m in Sources */,
 				5C40145C219E8909003976B9 /* MainTableVIewCellVM.m in Sources */,
 				5C401416219D1880003976B9 /* QSPTableViewCell.m in Sources */,

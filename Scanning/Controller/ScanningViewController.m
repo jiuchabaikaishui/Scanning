@@ -22,8 +22,8 @@
 @implementation ScanningViewController
 
 #pragma mark - 属性方法
-- (ScanningVM *)scanningVM {
-    return (ScanningVM *)super.vm;
+- (NativeScanningVM *)scanningVM {
+    return (NativeScanningVM *)super.vm;
 }
 
 #pragma mark - 控制器周期
@@ -65,15 +65,36 @@
 
 - (void)loadScanView{
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *error = NULL;
+    
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
+    if ([session canSetSessionPreset:AVCaptureSessionPresetHigh]) {
+        [session setSessionPreset:AVCaptureSessionPresetHigh];
+    }
+    
+    //监听相机自动对焦
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subjectAreaDidChange:) name:AVCaptureDeviceSubjectAreaDidChangeNotification object:device];
+    
+//    [session beginConfiguration];
+//    [device lockForConfiguration:nil];
+//    if (device.isFocusPointOfInterestSupported && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+//        [device setFocusMode:AVCaptureFocusModeAutoFocus];
+//    }
+//    device.flashMode = AVCaptureFlashModeAuto;
+//    if ([device isWhiteBalanceModeSupported:AVCaptureWhiteBalanceModeAutoWhiteBalance]) {
+//        device.whiteBalanceMode = AVCaptureWhiteBalanceModeAutoWhiteBalance;
+//    }
+//    [device unlockForConfiguration];
+//    [session commitConfiguration];
+    
+    NSError *error = NULL;
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
     if ([session canAddInput:input]) {
         [session addInput:input];
     }
+    
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    NSLog(@"%@", NSStringFromCGRect(output.rectOfInterest));
+    DebugLog(@"%@", NSStringFromCGRect(output.rectOfInterest));
     if (self.scanningVM.rectOfInterest) {
         CGFloat margin = self.view.frame.size.width/6.0;
         CGFloat X = margin;
@@ -81,7 +102,7 @@
         CGFloat H = W;
         CGFloat Y = (self.view.frame.size.height - H)/2;
         output.rectOfInterest = CGRectMake(Y/self.view.frame.size.height, X/self.view.frame.size.width, H/self.view.frame.size.height, W/self.view.frame.size.width);
-        NSLog(@"%@", NSStringFromCGRect(output.rectOfInterest));
+        DebugLog(@"%@", NSStringFromCGRect(output.rectOfInterest));
     }
     if ([session canAddOutput:output]) {
         [session addOutput:output];
@@ -96,13 +117,17 @@
     self.session = session;
 }
 
+- (void)subjectAreaDidChange:(NSNotification *)sender {
+    DebugLog(@"%s", __FUNCTION__);
+//    AVCaptureDevice *device = sender.object;
+}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     if (metadataObjects.count > 0) {
         [self.session stopRunning];
         AVMetadataMachineReadableCodeObject *object = metadataObjects[0];
-        UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:@"tishi" message:object.stringValue preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:@"结果" message:object.stringValue preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.session startRunning];
         }];

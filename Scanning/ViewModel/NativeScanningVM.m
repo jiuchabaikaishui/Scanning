@@ -6,14 +6,14 @@
 //  Copyright © 2018年 PowesunHolding. All rights reserved.
 //
 
-#import "ScanningVM.h"
+#import "NativeScanningVM.h"
 
-@implementation ScanningVM
+@implementation NativeScanningVM
 
 + (instancetype)create {
     return [[self alloc] init];
 }
-- (ScanningVM * (^)(BOOL))rectOfInterestSet {
+- (NativeScanningVM * (^)(BOOL))rectOfInterestSet {
     return ^(BOOL rectOfInterest) {
         _rectOfInterest = rectOfInterest;
         

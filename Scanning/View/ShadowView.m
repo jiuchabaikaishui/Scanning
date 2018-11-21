@@ -90,8 +90,11 @@
         }
         NSObject *tagetObj = [[NSObject alloc] init];
         objc_setAssociatedObject(tagetObj, "weakSealf", self, OBJC_ASSOCIATION_ASSIGN);
+        DebugLog(@"--------------------a");
         self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:tagetObj selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
         class_addMethod(tagetObj.class, @selector(timerAction:), (IMP)timerActionIMP, "V@:@");
+        [self timerAction:self.timer];
     }
 }
 void timerActionIMP(id self, SEL _cmd, NSTimer *timer)
@@ -101,6 +104,7 @@ void timerActionIMP(id self, SEL _cmd, NSTimer *timer)
 }
 - (void)timerAction:(NSTimer *)timer
 {
+    DebugLog(@"--------------------b");
     CGFloat margin = self.frame.size.width/6.0;
     CGFloat X = margin;
     CGFloat W = margin*4;

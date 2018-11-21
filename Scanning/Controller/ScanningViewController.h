@@ -7,10 +7,10 @@
 //
 
 #import "BaseViewController.h"
-#import "ScanningVM.h"
+#import "NativeScanningVM.h"
 
 @interface ScanningViewController : BaseViewController
 
-@property (strong, nonatomic, readonly) ScanningVM *scanningVM;
+@property (strong, nonatomic, readonly) NativeScanningVM *scanningVM;
 
 @end

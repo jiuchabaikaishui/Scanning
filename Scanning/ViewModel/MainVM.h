@@ -8,14 +8,17 @@
 
 #import "BaseViewControllerVM.h"
 #import "MainTableVIewCellVM.h"
-#import "ScanningVM.h"
+#import "NativeScanningVM.h"
 #import "ImagePickerVM.h"
+#import "ZBarScanningVM.h"
+#import "ZXScanningVM.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainVM : BaseViewControllerVM
 
 @property (strong, nonatomic, readonly) QSPTableViewVM *tableViewVM;
+@property (assign, nonatomic) ImagePickerVMType currentImagePickerType;
 
 @end
 
