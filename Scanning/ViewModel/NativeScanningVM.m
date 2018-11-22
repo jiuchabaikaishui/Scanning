@@ -20,5 +20,19 @@
         return self;
     };
 }
+- (NativeScanningVM * _Nonnull (^)(BOOL))cameraAutoSet {
+    return ^(BOOL cameraAuto) {
+        _cameraAuto = cameraAuto;
+        
+        return self;
+    };
+}
+- (NativeScanningVM * _Nonnull (^)(BOOL))cameraPushAndPullSet {
+    return ^(BOOL cameraPushAndPull) {
+        _cameraPushAndPull = cameraPushAndPull;
+        
+        return self;
+    };
+}
 
 @end

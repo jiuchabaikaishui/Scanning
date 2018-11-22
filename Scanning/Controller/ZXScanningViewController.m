@@ -42,7 +42,7 @@
     self.capture.delegate = self;
 }
 - (void)bindVM {
-    
+    self.title = self.scanningVM.title;
 }
 
 #pragma mark - <ZXCaptureDelegate>代理方法

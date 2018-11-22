@@ -18,13 +18,28 @@
                 NSString *title = @"扫一扫";
                 sectionVM.dataMCreate(CommonM.class, ^(CommonM *model){ model.titleSet(@"原生SDK").detailSet(@"有局限"); });
                 sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
-                    cellVM.nextVMSet([NativeScanningVM create].rectOfInterestSet(NO).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"不设置rectOfInterest");
+                    cellVM.nextVMSet([NativeScanningVM create].titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"不进行任何设置");
                     });
                 });
                 sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
                     cellVM.nextVMSet([NativeScanningVM create].rectOfInterestSet(YES).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
-                        model.titleSet(title).detailSet(@"设置rectOfInterest");
+                        model.titleSet(title).detailSet(@"设置扫描区域");
+                    });
+                });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
+                    cellVM.nextVMSet([NativeScanningVM create].rectOfInterestSet(YES).cameraAutoSet(YES).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"设置扫描区域与自动白平衡、自动对焦、自动曝光");
+                    });
+                });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
+                    cellVM.nextVMSet([NativeScanningVM create].rectOfInterestSet(YES).cameraPushAndPullSet(YES).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"设置扫描区域与推拉镜头");
+                    });
+                });
+                sectionVM.addRowVMCreate(MainTableVIewCellVM.class, ^(MainTableVIewCellVM *cellVM){
+                    cellVM.nextVMSet([NativeScanningVM create].rectOfInterestSet(YES).cameraAutoSet(YES).cameraPushAndPullSet(YES).titleSet(title)).dataMCreate(CommonM.class, ^(CommonM *model){
+                        model.titleSet(title).detailSet(@"设置扫描区域，推拉镜头与自动白平衡、自动对焦、自动曝光");
                     });
                 });
                 title = @"识别图片";
