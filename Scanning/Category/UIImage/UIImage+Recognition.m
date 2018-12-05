@@ -88,7 +88,7 @@
     });
 }
 - (UIImage *)imageToScale:(CGFloat)scale {
-    CGSize size = CGSizeMake(floor(self.size.width*scale), floor(self.size.height*scale));
+    CGSize size = CGSizeMake(ceil(self.size.width*scale), ceil(self.size.height*scale));
     return [self imageToSize:size];
 }
 - (UIImage *)imageToSize:(CGSize)size {
