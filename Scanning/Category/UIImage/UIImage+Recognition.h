@@ -28,6 +28,8 @@
  */
 - (void)QRRecogniteMaxRate:(int)rate limitArea:(CGFloat)area limitMemory:(CGFloat)memory completion:(void (^)(NSString *codeStr))completionBlock;
 
+- (void)rectangleRecognite:(void (^)(NSString *codeStr))completionBlock;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @end

@@ -37,7 +37,7 @@
         NSString *QRCodeString = nil;
         DebugQRRLog(@"\nimageSize:%@\n", NSStringFromCGSize(self.size));
         // 创建探测器 CIDetectorTypeQRCode
-        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
+        CIDetector *detector = [CIDetector detectorOfType: CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyHigh}];
         int count = rate > 0 ? rate : 1;
         for (int index = 0; index < count; index++) {
             @autoreleasepool {
@@ -48,6 +48,9 @@
                 if (index == 0) {
                     image = self;
                 } else {
+                    if (index == 1) {
+                        image = [self autoAdjustment];
+                    }
                     if (limit <= 0 || self.size.width*self.size.height > limit) {
                         break;
                     }
@@ -64,7 +67,7 @@
                     break;
                 }
                 
-                NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
+                NSArray *features = [detector featuresInImage:[[CIImage alloc] initWithImage:image]];
                 
                 // 判断是否有数据（即是否是二维码）
                 if (features.count > 0) {
@@ -87,6 +90,19 @@
         });
     });
 }
+- (void)rectangleRecognite:(void (^)(NSString *codeStr))completionBlock {
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeRectangle context:[CIContext context] options:@{CIDetectorAccuracy: CIDetectorAccuracyHigh}];
+    NSArray *features = [detector featuresInImage:[[CIImage alloc] initWithImage:self]];
+    if (completionBlock) {
+        if (features && features.count) {
+            CIRectangleFeature *feature = [features firstObject];
+            DebugLog(@"\n-------------%@-------------", feature);
+            completionBlock(@"识别到结果");
+        } else {
+            completionBlock(nil);
+        }
+    }
+}
 - (UIImage *)imageToScale:(CGFloat)scale {
     CGSize size = CGSizeMake(ceil(self.size.width*scale), ceil(self.size.height*scale));
     return [self imageToSize:size];
@@ -98,6 +114,23 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+- (UIImage *)autoAdjustment {
+    CIImage *image = [[CIImage alloc] initWithImage:self];
+    id orientation = [[image properties] valueForKey:CFBridgingRelease(kCGImagePropertyOrientation)];
+    NSArray *adjustments = [image autoAdjustmentFiltersWithOptions:orientation ? @{CIDetectorImageOrientation: orientation} : nil];
+    if (adjustments && adjustments.count) {
+        for (CIFilter *filter in adjustments) {
+            [filter setValue:image forKey:kCIInputImageKey];
+            image = filter.outputImage;
+        }
+        
+        CIContext *context = [CIContext context];
+        CGImageRef imageCG = [context createCGImage:image fromRect:image.extent];
+        return [UIImage imageWithCGImage:imageCG];
+    }
+    
+    return self;
 }
 
 @end
